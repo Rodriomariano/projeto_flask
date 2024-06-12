@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "<h1>Home</h1>"
+    return render_template("home.html")
 
 @app.route("/contato")
 def contato():
@@ -28,3 +28,5 @@ def produto(nome):
             return f"{produto['nome']}, {produto['descricao']}"
         
         return "Produto não existe!"
+    
+    app.run
